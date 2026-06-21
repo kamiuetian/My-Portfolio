@@ -13,8 +13,8 @@ async function Projects() {
         <div className="max-w-3xl">
           <SubTitle title="Projects" />
           <p className="mt-3 text-slate-500">
-            Resume-backed project work across full-stack products, AI tools,
-            Web3 platforms, WordPress, mobile apps, and production support.
+            Product work across full-stack platforms, AI tools, Web3 products,
+            WordPress, mobile apps, and long-running production systems.
           </p>
         </div>
 

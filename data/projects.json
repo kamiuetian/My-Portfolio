@@ -147,7 +147,7 @@
     {
       "id": "freqtrail",
       "title": "FreqTrail Radio",
-      "description": "Radio and media web experience listed in the resume accomplishments, focused on online discovery and listening access.",
+      "description": "Radio and media web experience focused on online discovery and listening access.",
       "tags": ["Media", "Radio", "Web App", "Content"],
       "cover_url": "/images/project1.png",
       "url": "http://freqtrail.com/",
@@ -177,7 +177,7 @@
     {
       "id": "myislam",
       "title": "MyIslam.org",
-      "description": "Long-running remote development and support work for a large Islamic content platform, including React, Node.js, React Native, Python, and Laravel contributions.",
+      "description": "Long-running remote engineering and support work for a large Islamic content platform, including React, Node.js, React Native, Python, and Laravel contributions.",
       "tags": ["Content Platform", "React", "Node.js", "Laravel", "React Native"],
       "cover_url": "/images/project3.png",
       "url": "https://myislam.org/",
@@ -186,7 +186,7 @@
       "stack": ["React", "Node.js", "React Native", "Python", "Laravel"],
       "featured": true,
       "highlights": [
-        "Provided multi-year development support for a content platform with broad reach.",
+        "Provided multi-year engineering support for a content platform with broad reach.",
         "Worked across web, mobile, backend, and scripting needs.",
         "Supported both English and localized content experiences."
       ]
@@ -224,7 +224,7 @@
     {
       "id": "mineaway",
       "title": "MineAway",
-      "description": "South African business website listed in resume accomplishments, built to present services and support customer discovery.",
+      "description": "South African business website built to present services and support customer discovery.",
       "tags": ["Business Website", "South Africa", "Web Development"],
       "cover_url": "/images/project3.png",
       "url": "https://mineaway.co.za/",
@@ -284,7 +284,7 @@
     {
       "id": "adawizard",
       "title": "AdaWizard",
-      "description": "Cardano-related web product listed in resume accomplishments, positioned around Web3 tooling and ecosystem workflows.",
+      "description": "Cardano-related web product positioned around Web3 tooling and ecosystem workflows.",
       "tags": ["Cardano", "Web3", "Blockchain", "Tools"],
       "cover_url": "/images/project1.png",
       "url": "https://adawizard.com/",
@@ -314,7 +314,7 @@
     {
       "id": "adaprocompliance",
       "title": "AdaProCompliance",
-      "description": "Compliance-focused web product for Cardano and Web3 audiences, listed in resume accomplishments.",
+      "description": "Compliance-focused web product for Cardano and Web3 audiences.",
       "tags": ["Compliance", "Cardano", "Web3", "SaaS"],
       "cover_url": "/images/project3.png",
       "url": "https://adaprocompliance.com/",

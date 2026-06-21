@@ -87,11 +87,11 @@ const config = {
       },
       {
         title: "20+",
-        subTitle: "Resume-backed projects shipped",
+        subTitle: "Products and platforms shipped",
       },
       {
         title: "4",
-        subTitle: "Core domains: AI, Web3, mobile, web",
+        subTitle: "AI, Web3, mobile, and web expertise",
       },
     ],
   },
@@ -184,7 +184,7 @@ const config = {
   },
   portfolio: {
     title: "Projects",
-    subTitle: "Selected work from my resume",
+    subTitle: "Selected product work",
     content:
       "A focused selection of shipped products and client platforms across AI tools, Web3, SaaS utilities, mobile/web apps, and content systems.",
   },
@@ -236,7 +236,7 @@ const config = {
   footer: {
     leftContent: "Copyright 2026 Muhammad Kamran. All rights reserved.",
     centerContent:
-      "Built with Next.js and Tailwind CSS to showcase resume-backed product work.",
+      "Showcasing production work across AI, Web3, SaaS, mobile, and web platforms.",
     links: [
       {
         name: "Website",
