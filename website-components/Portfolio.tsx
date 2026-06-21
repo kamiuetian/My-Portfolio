@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useReducer, useState } from "react";
+import React from "react";
 import Title from "./ui/Title";
 import { config } from "@/constant";
 import SubTitle from "./ui/SubTitle";
@@ -20,49 +20,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 import Button from "./ui/Button";
 import { ArrowTopRightIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
+import type { ProjectRecord } from "@/lib/projects";
+import ProjectVisual from "./ProjectVisual";
 
-interface ProjectProps {
-  title: string;
-  cover_url: string;
-  description: string;
-  id: string;
+interface ProjectsProps {
+  projects: ProjectRecord[];
 }
 
-function Projects() {
+function Projects({ projects }: ProjectsProps) {
   const router = useRouter();
-
-  const [response, setResponse] = useReducer(
-    (prev: any, next: any) => {
-      return { ...prev, ...next };
-    },
-    {
-      data: [],
-      loading: true,
-      searchTerm: "",
-      page: 0,
-    }
-  );
-
-  const fetchProjects = async () => {
-    setResponse({ loading: true });
-    const res = await fetch(`/api/projects?limit=6`, {
-      method: "GET",
-    });
-    const response = await res.json();
-
-    setResponse({
-      data: response.data,
-      loading: false,
-    });
-  };
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
 
   return (
     <div className="py-12 flex flex-col lg:items-center" id="portfolio">
@@ -92,64 +61,57 @@ function Projects() {
           className="w-full max-w-sm md:max-w-5xl m-auto"
         >
           <CarouselContent>
-            {response.loading ? (
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card className="p-4">
-                    <div className="animate-pulse flex space-x-4">
-                      <div className="flex-1 space-y-6 py-1">
-                        <div className="h-28 w-full bg-slate-200 rounded"></div>
-                        <div className="space-y-3">
-                          <div className="h-2 bg-slate-200 rounded"></div>
-                          <div className="h-2 bg-slate-200 rounded"></div>
-                        </div>
-                      </div>
-                    </div>
+            {projects.map((project) => (
+              <CarouselItem
+                key={project.id}
+                className="md:basis-1/2 lg:basis-1/3"
+                data-aos="fade-up"
+              >
+                <div className="p-1 h-full">
+                  <Card className="p-0 h-full rounded-lg overflow-hidden shadow-sm">
+                    <CardContent className="p-0">
+                      <ProjectVisual project={project} />
+                    </CardContent>
+                    <CardHeader className="p-5">
+                      <CardTitle className="text-xl leading-snug">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="mt-2 line-clamp-4">
+                        {project.description}
+                      </CardDescription>
+                      {project.role ? (
+                        <p className="pt-2 text-xs font-medium uppercase tracking-wide text-green-700">
+                          {project.role}
+                        </p>
+                      ) : null}
+                    </CardHeader>
+                    <CardFooter className="flex flex-wrap gap-3 p-5 pt-0">
+                      <Button
+                        onClick={() => {
+                          router.push(`/projects/${project.id}`);
+                        }}
+                      >
+                        <EyeOpenIcon /> Details
+                      </Button>
+                      {project.url ? (
+                        <Button
+                          variant="plain"
+                          onClick={() => {
+                            window.open(
+                              project.url,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
+                          }}
+                        >
+                          Live site <ArrowTopRightIcon />
+                        </Button>
+                      ) : null}
+                    </CardFooter>
                   </Card>
                 </div>
               </CarouselItem>
-            ) : (
-              <>
-                {response?.data?.map((project: ProjectProps, index: number) => (
-                  <CarouselItem
-                    key={index}
-                    className="md:basis-1/2 lg:basis-1/3"
-                    data-aos="fade-up"
-                  >
-                    <div className="p-1">
-                      <Card className="p-4">
-                        <CardHeader>
-                          <CardTitle>{project.title}</CardTitle>
-                          <CardDescription className="mt-1">
-                            {project.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="fle items-center justify-center mt-4">
-                          <Image
-                            width={`300`}
-                            height={300}
-                            src={project.cover_url || ""}
-                            alt="Project"
-                          />
-                        </CardContent>
-                        <CardFooter className="flex gap-4">
-                          <Button
-                            onClick={() => {
-                              router.push(`/projects/${project.id}`);
-                            }}
-                          >
-                            <EyeOpenIcon /> Details
-                          </Button>
-                          <Button variant="plain">
-                            Source code <ArrowTopRightIcon />
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </>
-            )}
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

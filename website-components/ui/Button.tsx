@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 interface ButtonProperties {
   children: ReactNode;
   variant?: "plain" | "default";
-  onClick?: Function;
+  onClick?: () => void;
 }
 
 function Button({ children, variant, onClick }: ButtonProperties) {

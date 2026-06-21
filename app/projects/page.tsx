@@ -1,79 +1,66 @@
-"use client";
-
-import React, { useEffect, useReducer } from "react";
-import WebsiteMainLayout from "@/website-components/layout/WebsiteMainLayout";
 import Link from "next/link";
+import WebsiteMainLayout from "@/website-components/layout/WebsiteMainLayout";
 import SubTitle from "@/website-components/ui/SubTitle";
+import { readProjectsFile } from "@/lib/projects";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
-function Projects() {
-  const [response, setResponse] = useReducer(
-    (prev: any, next: any) => {
-      return { ...prev, ...next };
-    },
-    {
-      data: [],
-      loading: true,
-      searchTerm: "",
-      page: 0,
-    }
-  );
-
-  const fetchProjects = async () => {
-    setResponse({ loading: true });
-    const res = await fetch(`/api/projects?limit=6`, {
-      method: "GET",
-    });
-    const response = await res.json();
-
-    setResponse({
-      data: response.data,
-      loading: false,
-    });
-  };
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
+async function Projects() {
+  const projects = await readProjectsFile();
 
   return (
     <WebsiteMainLayout>
       <section className="py-10 relative z-10">
-        <SubTitle title="Projects" />
-        {response.loading ? (
-          <div className="animate-pulse flex space-x-4 mt-12">
-            <div className="flex-1 space-y-6 py-1">
-              <div className="h-28 w-full bg-slate-200 rounded"></div>
-              <div className="space-y-3">
-                <div className="h-2 bg-slate-200 rounded"></div>
-                <div className="h-2 bg-slate-200 rounded"></div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="mt-8">
-            {response.data.map((project: { id: string; title: string; description: string; tags: string[] }, index: number) => (
-              <div key={index.toString()} className="mb-6 ">
+        <div className="max-w-3xl">
+          <SubTitle title="Projects" />
+          <p className="mt-3 text-slate-500">
+            Resume-backed project work across full-stack products, AI tools,
+            Web3 platforms, WordPress, mobile apps, and production support.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {projects.map((project) => (
+            <article
+              key={project.id}
+              className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <Link
                   href={`/projects/${project.id}`}
-                  className="text-2xl font-normal text-green-400"
+                  className="text-2xl font-medium text-slate-800 hover:text-green-700"
                 >
                   {project.title}
                 </Link>
-                <p className="mt-2 text-slate-500">{project.description}</p>
-                <ul className="flex gap-3 mt-2">
-                  {project.tags.map((tag: string, index: number) => (
-                    <li
-                      key={index.toString()}
-                      className="text-xs border px-1 border-slate-300 rounded text-slate-400"
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-green-700 hover:text-green-900"
+                  >
+                    Live <ArrowTopRightIcon />
+                  </a>
+                ) : null}
               </div>
-            ))}
-          </div>
-        )}
+              <p className="mt-3 text-slate-500">{project.description}</p>
+              {project.role ? (
+                <p className="mt-4 text-sm font-medium text-slate-700">
+                  {project.role}
+                </p>
+              ) : null}
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <li
+                    key={tag}
+                    className="rounded border border-slate-300 px-2 py-1 text-xs text-slate-500"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
     </WebsiteMainLayout>
   );

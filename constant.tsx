@@ -1,9 +1,15 @@
-import { SketchLogoIcon, Pencil2Icon, ImageIcon } from "@radix-ui/react-icons";
+import {
+  CodeIcon,
+  MagicWandIcon,
+  RocketIcon,
+  GlobeIcon,
+  EnvelopeClosedIcon,
+} from "@radix-ui/react-icons";
 
-interface SkillItemProps {
+interface IconProps {
   width: number;
   height: number;
-  className: string
+  className?: string;
 }
 
 const config = {
@@ -11,139 +17,189 @@ const config = {
     leftMenu: [
       {
         name: "Home",
-        id: '/#home'
+        id: "/#home",
       },
       {
-        name: "Skills",
-        id: '/#skills'
+        name: "About",
+        id: "/#about",
       },
       {
-        name: "Portfolio",
-        id: '/#portfolio'
+        name: "Expertise",
+        id: "/#skills",
       },
       {
-        name: "Blogs",
-        id: '/#blogs'
+        name: "Projects",
+        id: "/#portfolio",
       },
       {
         name: "Contact",
-        id: '/#contact'
+        id: "/#contact",
       },
     ],
     rightMenu: [
       {
-        name: "Download CV",
+        name: "Download Resume",
+        href: "/MUHAMMAD_KAMRAN_Resume.pdf",
       },
     ],
   },
   banner: {
-    title: "Welcome",
-    heading: "I have Creative Design Experience",
+    title: "Full-Stack Developer, Tester, Lecturer",
+    headline: {
+      leading: "I build",
+      highlight: "web, AI, and Web3 products",
+      trailing: "from research ideas to production releases.",
+    },
     subTitle:
-      "I'm Tanvir, a creative Product Designer. I've been helping businesses to solve their problems with my design for 2 years.",
+      "I'm Muhammad Kamran, a full-stack developer and lecturer with 7+ years of experience in web and mobile application development. I have shipped products for Ranzo Tech, AdaYield, MyIslam, AIDFY, Anonibox, LifetimePDF, and other teams across MERN, WordPress, React Native, Python, Web3, and LLM workflows.",
     actionButton: [
       {
-        name: "Contact Me",
+        name: "Let's collaborate",
+        href: "/#contact",
       },
       {
         name: "View portfolio",
+        href: "/#portfolio",
       },
     ],
+  },
+  about: {
+    title: "About",
+    subTitle: "Practical engineering backed by research and teaching",
+    content:
+      "I work at the intersection of software delivery, education, and applied AI research. Alongside remote product development, I teach mobile application development, web development, software quality assurance, and scripting languages at COMSATS University Islamabad, Attock campus.",
+    highlights: [
+      "Remote web developer for Ranzo Tech LLC, working across WordPress, MERN stack, Web3, and LLM-enabled products.",
+      "Former remote developer for MyIslam.org, contributing across React, Node.js, React Native, Python, and Laravel.",
+      "Lecturer supervising final-year projects in machine learning, computer vision, Web3, and generative AI.",
+      "PhD research focus: integrating large language models and reinforcement learning for personalized recommender systems.",
+    ],
+    actionButton: {
+      name: "View Resume",
+      href: "/MUHAMMAD_KAMRAN_Resume.pdf",
+    },
   },
   info: {
     data: [
       {
-        title: "80+",
-        subTitle: "Satisfied clients",
+        title: "7+",
+        subTitle: "Years building web and mobile apps",
       },
       {
-        title: "200+",
-        subTitle: "Projects completed",
+        title: "20+",
+        subTitle: "Resume-backed projects shipped",
       },
       {
-        title: "99+",
-        subTitle: "Reviews given",
+        title: "4",
+        subTitle: "Core domains: AI, Web3, mobile, web",
       },
     ],
   },
   mySkills: {
-    title: "My Skills",
-    subTitle: "Why Hire Me For Your Next Project?",
+    title: "Expertise",
+    subTitle: "Where I create the most impact",
     content:
-      "I'm specialist in UI/UX Designe. My passion is designing & solving problems through user experience and research.",
+      "I build production software while teaching and researching the systems behind it. My work spans full-stack apps, CMS platforms, mobile products, AI utilities, Web3 dashboards, testing, and server management.",
     actionButton: {
-      name: "Hire Me",
+      name: "Plan a project",
     },
     skills: [
       {
-        icon: (props: SkillItemProps) => {
-          return <SketchLogoIcon {...props}/>
+        icon: (props: IconProps) => {
+          return <CodeIcon {...props} />;
         },
-        title: "Visual Design",
-        subTitle: "Create user interface design with unique & modern ideas",
+        title: "Full-Stack Engineering",
+        subTitle:
+          "React, Next.js, Node.js, PHP, Laravel, Python, MySQL, MongoDB, PostgreSQL, and Git.",
       },
       {
-        icon: (props: SkillItemProps) => {
-          return <Pencil2Icon {...props}/>
+        icon: (props: IconProps) => {
+          return <MagicWandIcon {...props} />;
         },
-        title: "UX Research",
-        subTitle: "Create digital user products with updated ideas",
+        title: "AI Research & Applied ML",
+        subTitle:
+          "Machine learning, computer vision, generative AI, recommender systems, LLMs, and reinforcement learning.",
       },
       {
-        icon: (props: SkillItemProps) => {
-          return <ImageIcon {...props}/>
+        icon: (props: IconProps) => {
+          return <RocketIcon {...props} />;
         },
-        title: "Design Prototype",
-        subTitle: "Create advance design prototype with Figma apps.",
+        title: "Web3, Mobile & QA",
+        subTitle:
+          "Cardano products, wallet-aware apps, React Native, Unity, software quality assurance, and server management.",
       },
     ],
   },
   technologies: {
     title: "Technologies",
     subTitle:
-      "I have selected and mentioned here some of i worked projects technologies here",
+      "Tooling I rely on to craft reliable, scalable, and intelligent user experiences.",
     technologies: [
       {
-        name: "HTML",
+        name: "Next.js",
       },
       {
-        name: "CSS/SCSS",
-      },
-      {
-        name: "JavaScript",
+        name: "React",
       },
       {
         name: "TypeScript",
       },
       {
-        name: "NodeJS",
+        name: "Node.js",
       },
       {
-        name: "React.js",
+        name: "Python",
       },
       {
-        name: "Next.js",
+        name: "FastAPI",
+      },
+      {
+        name: "PostgreSQL",
+      },
+      {
+        name: "Supabase",
+      },
+      {
+        name: "AWS & Vercel",
+      },
+      {
+        name: "Docker & CI/CD",
+      },
+      {
+        name: "LangChain",
+      },
+      {
+        name: "OpenAI & Azure OpenAI",
+      },
+      {
+        name: "Pinecone & Vector DBs",
+      },
+      {
+        name: "Solidity & Web3",
+      },
+      {
+        name: "Ethereum & Cardano",
       },
     ],
   },
   portfolio: {
-    title: "Portfolio",
-    subTitle: "My Creative Works Latest Projects",
+    title: "Projects",
+    subTitle: "Selected work from my resume",
     content:
-      "I have selected and mentioned here some of my latest projects to share with you.",
+      "A focused selection of shipped products and client platforms across AI tools, Web3, SaaS utilities, mobile/web apps, and content systems.",
   },
   blogs: {
-    title: "Blogs",
-    subTitle: "My latest articles",
+    title: "Insights",
+    subTitle: "Notes on AI research and product delivery",
     content:
-      "I have selected and mentioned here some of my latest blogs to share with you.",
-    actionButton: "View All",
+      "Research notes on generative AI, recommender systems, and reinforcement learning, plus practical lessons from shipping products.",
+    actionButton: "All articles",
   },
   contact: {
     title: "Contact",
-    subTitle: "Let's Discuss Your Project",
+    subTitle: "Let's build something meaningful",
     content:
-      "Let's make something new, different and more meaningful or make thing more visual or conceptual",
+      "Share your idea, research collaboration, or product challenge and I will respond with a clear plan and next steps.",
     fields: [
       {
         fieldName: "Full name",
@@ -152,10 +208,10 @@ const config = {
         fieldName: "Your email",
       },
       {
-        fieldName: "Phone number",
+        fieldName: "Project type",
       },
       {
-        fieldName: "Budget",
+        fieldName: "Estimated budget",
       },
       {
         fieldName: "Message",
@@ -163,23 +219,50 @@ const config = {
     ],
   },
   contactInfo: {
-    call:{
-      fieldName: "Call me",
-      value: "+1 12445221",
+    call: {
+      fieldName: "Schedule a call",
+      value:
+        "Available worldwide - Email to arrange a Zoom or Google Meet session.",
     },
-    email:{
+    email: {
       fieldName: "Email me",
-      value: "demo@demo.com",
+      value: "m.kamran@cuiatk.edu.pk",
     },
-    address:{
-      fieldName: "Address",
-      value: "India",
-    }
+    address: {
+      fieldName: "Location",
+      value: "Remote - Pakistan (UTC+5)",
+    },
   },
   footer: {
-    leftContent: "@ 2022. All Rights Reserved",
-    centerContent: "Designed by Tanvir Ahmed",
+    leftContent: "Copyright 2026 Muhammad Kamran. All rights reserved.",
+    centerContent:
+      "Built with Next.js and Tailwind CSS to showcase resume-backed product work.",
+    links: [
+      {
+        name: "Website",
+        href: "https://muhammadkamran.dev",
+        icon: (props: IconProps) => {
+          return <GlobeIcon {...props} />;
+        },
+      },
+      {
+        name: "Fiverr",
+        href: "https://www.fiverr.com/kami_uetian",
+        icon: (props: IconProps) => {
+          return <RocketIcon {...props} />;
+        },
+      },
+      {
+        name: "Email",
+        href: "mailto:m.kamran@cuiatk.edu.pk",
+        icon: (props: IconProps) => {
+          return <EnvelopeClosedIcon {...props} />;
+        },
+      },
+    ],
   },
 };
 
 export { config };
+
+

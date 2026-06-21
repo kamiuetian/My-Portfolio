@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useState } from "react";
 import Logo from "@/public/images/logo.svg";
@@ -13,7 +13,6 @@ import {
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { config } from "@/constant";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +28,7 @@ function Header() {
 
   useEffect(() => {
     document.addEventListener("scroll", onPageScroll);
-    () => {
+    return () => {
       document.removeEventListener("scroll", onPageScroll);
     };
   }, []);
@@ -45,31 +44,28 @@ function Header() {
           <Image
             src={Logo}
             priority={true}
-            alt="Logo"
-            style={{
-              width: "120px",
-            }}
+            alt="MuhammadKamran.dev"
+            className="h-auto w-[190px] sm:w-[230px]"
           />
         </Link>
-        <div className="hidden md:block">
+        <nav className="hidden md:block">
           <div className="flex gap-4 items-center">
             {config.header.leftMenu.map((menu, index) => (
               <Link
                 href={menu.id}
                 className="text-slate-500 hover:text-slate-950 cursor-pointer"
                 key={index.toString()}
-                property=""
               >
                 {menu.name}
               </Link>
             ))}
           </div>
-        </div>
+        </nav>
         <div className="hidden md:block">
           {config.header.rightMenu.map((menu, index) => (
             <Link
-              href={"#"}
-              className=" border border-green-600 py-2 px-4 text-green-600 hover:bg-green-600 transition-all delay-75 hover:text-white rounded-sm cursor-pointer"
+              href={menu.href ?? "#"}
+              className="border border-green-600 py-2 px-4 text-green-600 hover:bg-green-600 transition-all delay-75 hover:text-white rounded-sm cursor-pointer"
               key={index.toString()}
             >
               {menu.name}
@@ -93,7 +89,6 @@ function Header() {
                       href={menu.id}
                       className="text-lg text-slate-400 hover:text-slate-950 cursor-pointer"
                       key={index.toString()}
-                      property=""
                     >
                       <SheetClose>{menu.name}</SheetClose>
                     </Link>
@@ -102,11 +97,11 @@ function Header() {
                 <div className="flex flex-col gap-4 items-center mt-6">
                   {config.header.rightMenu.map((menu, index) => (
                     <Link
-                      href={"#"}
+                      href={menu.href ?? "#"}
                       className="text-lg border border-green-600 py-2 px-5 hover:bg-green-600 transition-all delay-75 hover:text-white rounded-sm cursor-pointer"
                       key={index.toString()}
                     >
-                      {menu.name}
+                      <SheetClose>{menu.name}</SheetClose>
                     </Link>
                   ))}
                 </div>

@@ -1,0 +1,330 @@
+{
+  "projects": [
+    {
+      "id": "ranzotech",
+      "title": "Ranzo Tech LLC",
+      "description": "Remote product studio work for a US company, spanning WordPress, MERN stack products, Web3 integrations, and LLM-enabled tools.",
+      "tags": ["MERN", "WordPress", "Web3", "LLMs", "Product Studio"],
+      "cover_url": "/images/project1.png",
+      "url": "https://ranzotech.com",
+      "role": "Remote Web Developer",
+      "period": "2025 - Present",
+      "stack": ["React", "Node.js", "WordPress", "Web3", "LLMs"],
+      "featured": true,
+      "highlights": [
+        "Built and maintained product websites and utility platforms across multiple business lines.",
+        "Worked across frontend, backend, CMS, and AI-assisted product features.",
+        "Supported rapid shipping for a remote US-based product studio."
+      ]
+    },
+    {
+      "id": "lifetimepdf",
+      "title": "LifetimePDF",
+      "description": "All-in-one browser-based PDF toolkit for merging, splitting, compressing, converting, and protecting documents with a one-time payment model.",
+      "tags": ["PDF Tools", "SaaS", "Document Automation", "Productivity"],
+      "cover_url": "/images/project2.png",
+      "url": "https://lifetimepdf.com/",
+      "role": "Full-Stack Developer",
+      "stack": ["Next.js", "Node.js", "PDF Processing", "Payments"],
+      "featured": true,
+      "highlights": [
+        "Designed user flows for common document operations that need to feel fast and predictable.",
+        "Built a production SaaS utility around high-frequency file management tasks.",
+        "Focused on simple onboarding and direct value for non-technical users."
+      ]
+    },
+    {
+      "id": "anonibox-temp-mail",
+      "title": "Anonibox Temp Mail",
+      "description": "Disposable temporary email product for instant anonymous inboxes without signup, built for privacy-focused browsing and account testing.",
+      "tags": ["Privacy", "Temp Email", "Security", "Utilities"],
+      "cover_url": "/images/project3.png",
+      "url": "https://anonibox.com/",
+      "role": "Full-Stack Developer",
+      "stack": ["React", "Node.js", "Email Infrastructure", "Privacy"],
+      "featured": true,
+      "highlights": [
+        "Delivered a utility product centered on speed, privacy, and minimal friction.",
+        "Handled temporary inbox workflows and user-facing mailbox interactions.",
+        "Positioned the product for anonymous testing, signups, and spam protection."
+      ]
+    },
+    {
+      "id": "anonibox-io",
+      "title": "Anonibox.io",
+      "description": "Wallet-native blockchain messaging platform focused on private communication without conventional surveillance patterns.",
+      "tags": ["Blockchain", "Messaging", "Web3", "Privacy"],
+      "cover_url": "/images/project1.png",
+      "url": "http://anonibox.io/",
+      "role": "Web3 Developer",
+      "stack": ["React", "Node.js", "Wallet Auth", "Blockchain"],
+      "featured": true,
+      "highlights": [
+        "Built product surfaces for wallet-aware communication flows.",
+        "Connected Web3 identity concepts with practical messaging UX.",
+        "Focused on privacy-first positioning and simple onboarding."
+      ]
+    },
+    {
+      "id": "adayield",
+      "title": "AdaYield",
+      "description": "Cardano ecosystem platform and staking experience where I served as a full-stack developer across web, product, and support needs.",
+      "tags": ["Cardano", "Blockchain", "Staking", "Web3"],
+      "cover_url": "/images/project2.png",
+      "url": "https://www.adayield.io",
+      "role": "Full-Stack Developer",
+      "stack": ["React", "Node.js", "Cardano", "APIs"],
+      "featured": true,
+      "highlights": [
+        "Supported a production Cardano platform with real users and ecosystem requirements.",
+        "Worked across frontend experiences, integrations, and ongoing platform improvements.",
+        "Translated blockchain concepts into clearer product flows."
+      ]
+    },
+    {
+      "id": "cardano-chatbot",
+      "title": "Cardano Chatbot",
+      "description": "AI chatbot for the Cardano ecosystem, built to answer user questions and guide visitors through AdaYield-related concepts.",
+      "tags": ["AI Chatbot", "Cardano", "LLMs", "Web3 Support"],
+      "cover_url": "/images/project3.png",
+      "url": "https://cai.adayield.io/",
+      "role": "AI/Web Developer",
+      "stack": ["LLMs", "React", "Node.js", "Cardano"],
+      "featured": true,
+      "highlights": [
+        "Applied LLMs to a domain-specific support and education workflow.",
+        "Made crypto product information easier to query and understand.",
+        "Connected AI assistance with a live Web3 platform context."
+      ]
+    },
+    {
+      "id": "aidfy",
+      "title": "AIDFY",
+      "description": "AI product platform and tool hub focused on practical generative AI utilities and fast web delivery.",
+      "tags": ["Generative AI", "Tools", "Web App", "Product Platform"],
+      "cover_url": "/images/project1.png",
+      "url": "https://aidfy.io/",
+      "role": "AI Product Developer",
+      "stack": ["React", "Node.js", "LLMs", "APIs"],
+      "featured": true,
+      "highlights": [
+        "Built AI-first product surfaces for practical creative and utility workflows.",
+        "Integrated generative AI capabilities into accessible web experiences.",
+        "Supported a broader family of AI-powered products."
+      ]
+    },
+    {
+      "id": "ai-memer",
+      "title": "AI Memer",
+      "description": "Generative AI meme tool for creating shareable image-based content from fast prompts and lightweight creative workflows.",
+      "tags": ["Generative AI", "Content Creation", "Image Tools", "Entertainment"],
+      "cover_url": "/images/project2.png",
+      "url": "http://meme.aidfy.io/",
+      "role": "AI/Web Developer",
+      "stack": ["React", "Node.js", "Image Generation", "LLMs"],
+      "featured": true,
+      "highlights": [
+        "Converted an AI capability into a playful, user-facing creative tool.",
+        "Focused on quick output, low-friction prompts, and shareable results.",
+        "Demonstrated practical generative media workflows in production."
+      ]
+    },
+    {
+      "id": "tempmail-aidfy",
+      "title": "TempMail by AIDFY",
+      "description": "Temporary email utility under the AIDFY ecosystem for disposable inboxes, quick verification, and anonymous web workflows.",
+      "tags": ["Temp Email", "Privacy", "Utilities", "Web App"],
+      "cover_url": "/images/project3.png",
+      "url": "http://tempmail.aidfy.io/",
+      "role": "Full-Stack Developer",
+      "stack": ["React", "Node.js", "Email Infrastructure"],
+      "highlights": [
+        "Built reusable utility patterns for instant inbox generation.",
+        "Served privacy, testing, and one-time signup use cases.",
+        "Kept the product interaction direct and lightweight."
+      ]
+    },
+    {
+      "id": "freqtrail",
+      "title": "FreqTrail Radio",
+      "description": "Radio and media web experience listed in the resume accomplishments, focused on online discovery and listening access.",
+      "tags": ["Media", "Radio", "Web App", "Content"],
+      "cover_url": "/images/project1.png",
+      "url": "http://freqtrail.com/",
+      "role": "Web Developer",
+      "stack": ["React", "Node.js", "Media"],
+      "highlights": [
+        "Built a web presence for a media-focused product.",
+        "Supported content discovery and direct access patterns.",
+        "Delivered a straightforward public-facing experience."
+      ]
+    },
+    {
+      "id": "resume-builder",
+      "title": "Instant Job CV Resume Builder",
+      "description": "Resume builder platform for creating job-ready CVs through structured input and generated document outputs.",
+      "tags": ["Career Tools", "Resume Builder", "Document Automation", "SaaS"],
+      "cover_url": "/images/project2.png",
+      "url": "https://builder.instantjobcv.com/",
+      "role": "Full-Stack Developer",
+      "stack": ["React", "Node.js", "Document Generation"],
+      "highlights": [
+        "Created a guided workflow for structured resume creation.",
+        "Turned user inputs into polished career documents.",
+        "Focused on practical job-seeker outcomes."
+      ]
+    },
+    {
+      "id": "myislam",
+      "title": "MyIslam.org",
+      "description": "Long-running remote development and support work for a large Islamic content platform, including React, Node.js, React Native, Python, and Laravel contributions.",
+      "tags": ["Content Platform", "React", "Node.js", "Laravel", "React Native"],
+      "cover_url": "/images/project3.png",
+      "url": "https://myislam.org/",
+      "role": "Remote Web Developer",
+      "period": "2018 - 2025",
+      "stack": ["React", "Node.js", "React Native", "Python", "Laravel"],
+      "featured": true,
+      "highlights": [
+        "Provided multi-year development support for a content platform with broad reach.",
+        "Worked across web, mobile, backend, and scripting needs.",
+        "Supported both English and localized content experiences."
+      ]
+    },
+    {
+      "id": "gm-insurance",
+      "title": "GM Insurance Services",
+      "description": "Business website for an insurance services provider, focused on credibility, service information, and lead generation.",
+      "tags": ["Business Website", "Insurance", "WordPress", "Lead Generation"],
+      "cover_url": "/images/project1.png",
+      "url": "https://gminsuranceservices.com/",
+      "role": "Web Developer",
+      "stack": ["WordPress", "PHP", "SEO"],
+      "highlights": [
+        "Built a practical service website for a professional services audience.",
+        "Structured content around trust, services, and contact conversion.",
+        "Supported a clear path from visitor interest to inquiry."
+      ]
+    },
+    {
+      "id": "tvdfy",
+      "title": "TV Done For You",
+      "description": "Product and brand website for TVDFY, presenting a done-for-you media offering with a clear launch-oriented web presence.",
+      "tags": ["Landing Page", "Media", "Brand Website", "Product Launch"],
+      "cover_url": "/images/project2.png",
+      "url": "https://tvdfy.com/",
+      "role": "Web Developer",
+      "stack": ["React", "Landing Page", "Brand Design"],
+      "highlights": [
+        "Created a direct product-facing landing experience.",
+        "Organized the page around launch clarity and conversion.",
+        "Supported a concise brand story for a media product."
+      ]
+    },
+    {
+      "id": "mineaway",
+      "title": "MineAway",
+      "description": "South African business website listed in resume accomplishments, built to present services and support customer discovery.",
+      "tags": ["Business Website", "South Africa", "Web Development"],
+      "cover_url": "/images/project3.png",
+      "url": "https://mineaway.co.za/",
+      "role": "Web Developer",
+      "stack": ["WordPress", "PHP", "SEO"],
+      "highlights": [
+        "Delivered a service-focused public website.",
+        "Supported regional business discovery and contact flows.",
+        "Built for clear content presentation and maintainability."
+      ]
+    },
+    {
+      "id": "searchpage",
+      "title": "Search Page",
+      "description": "Search-focused web product for the South African market, built around simple discovery and navigation use cases.",
+      "tags": ["Search", "Web App", "Discovery", "South Africa"],
+      "cover_url": "/images/project1.png",
+      "url": "https://searchpage.co.za/",
+      "role": "Web Developer",
+      "stack": ["React", "Node.js", "Search"],
+      "highlights": [
+        "Built a web product around search and discovery behavior.",
+        "Focused on direct navigation and simple user flows.",
+        "Supported a regional web utility presence."
+      ]
+    },
+    {
+      "id": "royal-decor",
+      "title": "Royal Decor and Turfs",
+      "description": "Decor and turf business website for presenting products, services, and customer inquiry paths.",
+      "tags": ["Business Website", "Decor", "Ecommerce", "South Africa"],
+      "cover_url": "/images/project2.png",
+      "url": "https://royaldecorandturfs.co.za/",
+      "role": "Web Developer",
+      "stack": ["WordPress", "PHP", "Catalog UX"],
+      "highlights": [
+        "Built a visual product and service presence for a decor business.",
+        "Structured pages for browsing, trust, and customer inquiry.",
+        "Supported a clear local-business conversion path."
+      ]
+    },
+    {
+      "id": "salah-habit-tracker",
+      "title": "Salah Habit Tracker",
+      "description": "Habit tracking web app for monitoring salah consistency through a lightweight and focused tracking interface.",
+      "tags": ["Habit Tracker", "Web App", "Productivity", "Islamic App"],
+      "cover_url": "/images/project3.png",
+      "url": "https://salah-tracker.surge.sh/",
+      "role": "Frontend Developer",
+      "stack": ["React", "Surge", "Local State"],
+      "highlights": [
+        "Built a focused habit-tracking interface for a specific routine.",
+        "Kept the app lightweight and easy to revisit daily.",
+        "Translated a personal consistency goal into a simple product."
+      ]
+    },
+    {
+      "id": "adawizard",
+      "title": "AdaWizard",
+      "description": "Cardano-related web product listed in resume accomplishments, positioned around Web3 tooling and ecosystem workflows.",
+      "tags": ["Cardano", "Web3", "Blockchain", "Tools"],
+      "cover_url": "/images/project1.png",
+      "url": "https://adawizard.com/",
+      "role": "Web3 Developer",
+      "stack": ["React", "Node.js", "Cardano"],
+      "highlights": [
+        "Supported Web3 tooling in the Cardano ecosystem.",
+        "Worked with blockchain-oriented product concepts and user flows.",
+        "Presented technical ecosystem value through a public web interface."
+      ]
+    },
+    {
+      "id": "cabinet-specialist",
+      "title": "Cabinet Specialist",
+      "description": "Business website for cabinet services with a focus on service presentation, credibility, and inbound customer requests.",
+      "tags": ["Business Website", "Services", "Lead Generation", "WordPress"],
+      "cover_url": "/images/project2.png",
+      "url": "https://cabinet-specialist.com/",
+      "role": "Web Developer",
+      "stack": ["WordPress", "PHP", "SEO"],
+      "highlights": [
+        "Created a practical site for a local service business.",
+        "Organized service information for fast customer evaluation.",
+        "Supported direct inquiry and conversion-focused navigation."
+      ]
+    },
+    {
+      "id": "adaprocompliance",
+      "title": "AdaProCompliance",
+      "description": "Compliance-focused web product for Cardano and Web3 audiences, listed in resume accomplishments.",
+      "tags": ["Compliance", "Cardano", "Web3", "SaaS"],
+      "cover_url": "/images/project3.png",
+      "url": "https://adaprocompliance.com/",
+      "role": "Web3 Developer",
+      "stack": ["React", "Node.js", "Cardano", "Compliance"],
+      "highlights": [
+        "Worked on compliance-oriented product positioning for a Web3 audience.",
+        "Connected blockchain ecosystem needs with a clearer web product surface.",
+        "Supported trust-building content and application structure."
+      ]
+    }
+  ]
+}

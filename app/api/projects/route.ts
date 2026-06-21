@@ -1,60 +1,139 @@
+import {
+  filterProjects,
+  findProjectById,
+  readProjectsFile,
+  shouldUseLocalProjects,
+  shouldUseSupabaseProjects,
+} from "@/lib/projects";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 const tableName = "projects";
+const forceLocalProjects = shouldUseLocalProjects();
+const forceSupabaseProjects = shouldUseSupabaseProjects();
+const hasSupabaseConfig = Boolean(
+  process.env.NEXT_PUBLIC_SUPABASE_URL &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
 
 export async function GET(request: Request) {
-    let response;
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
-    const { searchParams } = new URL(request.url);
-    const id = searchParams.get("id");
-    const term = searchParams.get("term") || "";
-    const page = parseInt(searchParams.get("page") || '0');
-    const limit = parseInt(searchParams.get("limit") || '10');
-    // Start index from 0 
-    const programLimit = limit - 1;
-    const from = page * limit;
-    const to = from + programLimit;
+  let response;
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get("id");
+  const term = searchParams.get("term") || "";
+  const page = parseInt(searchParams.get("page") || "0", 10);
+  const limit = parseInt(searchParams.get("limit") || "10", 10);
 
-    if(id) {
-        response = await supabase.from(tableName).select().eq('id', id).single();
-    } else {
-        response = await supabase.from(tableName).select().ilike('title', `%${term}%`).range(from, to);
+  let localProjects: Awaited<ReturnType<typeof readProjectsFile>> = [];
+
+  if (forceLocalProjects || !forceSupabaseProjects) {
+    localProjects = await readProjectsFile();
+  }
+
+  const shouldUseLocal =
+    forceLocalProjects || (!forceSupabaseProjects && localProjects.length > 0);
+
+  if (shouldUseLocal) {
+    if (id) {
+      const project = findProjectById(localProjects, id);
+      return NextResponse.json({ data: project || null });
     }
-    
-    return NextResponse.json(response)
+
+    const { data, total } = filterProjects(localProjects, term, page, limit);
+    return NextResponse.json({ data, count: total });
+  }
+
+  if (!hasSupabaseConfig) {
+    return NextResponse.json({ data: [], count: 0 });
+  }
+
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+  // Start index from 0
+  const programLimit = limit - 1;
+  const from = page * limit;
+  const to = from + programLimit;
+
+  if (id) {
+    response = await supabase.from(tableName).select().eq("id", id).single();
+  } else {
+    response = await supabase
+      .from(tableName)
+      .select()
+      .ilike("title", `%${term}%`)
+      .range(from, to);
+  }
+
+  return NextResponse.json(response);
 }
 
 export async function POST(request: Request) {
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
-    const data = await request.json();
-    
-    const response = await supabase.from(tableName).insert(data).select().single();
+  if (!forceSupabaseProjects) {
+    return NextResponse.json(
+      {
+        data: null,
+        error:
+          "Project data is read-only. Set PROJECTS_SOURCE=supabase to write.",
+      },
+      { status: 405 }
+    );
+  }
 
-    return NextResponse.json(response)   
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+  const data = await request.json();
+
+  const response = await supabase.from(tableName).insert(data).select().single();
+
+  return NextResponse.json(response);
 }
 
 export async function PATCH(request: Request) {
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
-    const data = await request.json();
-    const { searchParams } = new URL(request.url);
-    const id = searchParams.get("id");
-    
-    const response = await supabase.from(tableName).update(data).eq('id', id).select().single();
+  if (!forceSupabaseProjects) {
+    return NextResponse.json(
+      {
+        data: null,
+        error:
+          "Project data is read-only. Set PROJECTS_SOURCE=supabase to write.",
+      },
+      { status: 405 }
+    );
+  }
 
-    return NextResponse.json(response)  
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+  const data = await request.json();
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get("id");
+
+  const response = await supabase
+    .from(tableName)
+    .update(data)
+    .eq("id", id)
+    .select()
+    .single();
+
+  return NextResponse.json(response);
 }
 
 export async function DELETE(request: Request) {
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
-    const data = await request.json();
-    
-    const response = await supabase.from(tableName).delete().eq('id', data.id);
+  if (!forceSupabaseProjects) {
+    return NextResponse.json(
+      {
+        data: null,
+        error:
+          "Project data is read-only. Set PROJECTS_SOURCE=supabase to write.",
+      },
+      { status: 405 }
+    );
+  }
 
-    return NextResponse.json(response) 
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+  const data = await request.json();
+
+  const response = await supabase.from(tableName).delete().eq("id", data.id);
+
+  return NextResponse.json(response);
 }
